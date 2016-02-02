@@ -35,6 +35,7 @@ en:
       price_variants: "Price/Variants"
       stock: "Stock"
       no_products: "No products to display."
+      edit: "Edit"
   number:
     currency:
       format:
@@ -45,3 +46,6 @@ en:
         significant: false
         strip_insignificant_zeros: false
         unit: "₹"
+  stock_levels:
+    create_notice: 'Stock level has been adjusted successfully'
+    current_stock_level_html: "Current stock level is <b>%{product_stock}</b>"

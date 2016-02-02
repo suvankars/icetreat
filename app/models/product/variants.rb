@@ -31,5 +31,6 @@ class Product < ActiveRecord::Base
       !variants.empty?
   end
 
+ 
   
 end

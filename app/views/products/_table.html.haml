@@ -36,7 +36,10 @@
                         %tr
                           %td{:width => '50%'}= link_to variant.name, edit_product_variant_path(product, variant)
                           %td{:width => '25%'}= number_to_currency variant.price
-                          %td{:width => '25%'}= variant.quantity
+                          %td{:width => '25%'}
+                            - if variant.stock_control?
+                              %span.float-right= link_to t('products.edit') , stock_levels_path(:product_id => variant.id), :class => 'edit', :rel => 'dialog', :data => {:dialog_width => 700, :dialog_behavior => 'stockLevelAdjustments'}
+                              = boolean_tag(variant.in_stock?, nil, :true_text => variant.stock, :false_text => t('shoppe.products.no_stock'))
                 - else
                   %td= number_to_currency product.price
                   %td= product.quantity

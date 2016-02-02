@@ -23,7 +23,8 @@ Rails.application.routes.draw do
     resources :finances
   end
   
-  
+  resources :stock_levels, :only => [:index, :create, :destroy]
+    
   get 'dashboard' => 'dashboard#index'
 
   resources :products do

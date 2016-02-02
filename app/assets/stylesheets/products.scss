@@ -25,7 +25,10 @@ table.table.table-bordered {
       tr:last-child td { border-bottom-width:1;}
     }
   }
-  
+
+  tbody tr.form td {
+    background: #f2f6fb;
+  }
 }
 
 #inner-table {
@@ -36,4 +39,12 @@ table.table.table-bordered {
 
 .col-lg-9 {
   width: 100%;
+}
+
+.float-right {
+  float: right;
+}
+
+span.boolean span.true {
+color: #20dbdb;
 }

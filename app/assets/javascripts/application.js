@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require turbolinks
+//= require nifty/dialog
 //= require react
 //= require react_ujs
 //= require components

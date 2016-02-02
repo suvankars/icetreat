@@ -15,9 +15,18 @@ class Product < ActiveRecord::Base
   belongs_to :brand
   belongs_to :tax_rate
   belongs_to :size
-  
+  has_many :stock_level
+
   def is_a_variant?
       self.parent_id.nil?
+  end
+
+  def in_stock?
+    self.quantity > 0
+  end
+
+  def stock
+    self.quantity + self.stock_level.sum(:adjustment)
   end
 
 end
