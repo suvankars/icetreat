@@ -1,5 +1,5 @@
 class Product < ActiveRecord::Base
-  
+  serialize :images
   # Add dependencies for products
   #require_dependency provides a way to load a file using the current 
   #loading mechanism, and keeping track of constants defined in that file
@@ -18,7 +18,7 @@ class Product < ActiveRecord::Base
   has_many :stock_level
 
   #Mount image uploader 
-  mount_uploader :image, ImageUploader
+  mount_uploaders :images, ImageUploader
   
   def is_a_variant?
       self.parent_id.nil?

@@ -66,5 +66,6 @@ gem 'apipie-rails'
 gem 'nifty-utils'
 gem 'nifty-dialog'
 
-gem 'carrierwave'
-#gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
+#gem 'carrierwave'
+gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
+gem "mini_magick"

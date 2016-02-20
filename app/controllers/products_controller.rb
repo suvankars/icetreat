@@ -95,7 +95,9 @@ class ProductsController < ApplicationController
       params.require(:product).permit(:name, :skuid, :brand_id, :tax_rate_id, 
                                       :subcategory_id, :supplier_id, 
                                       :permalink, :description, :short_description, 
-                                      :price, :cost_price, :size_id, :quantity, 
+                                      :price, :cost_price, :size_id, :quantity,
+                                      {images: []},
+                                      :remove_images,
                                        properties: params[:product][:properties].try(:keys))
     end
 end

@@ -1,4 +1,4 @@
-= simple_form_for @product, :html => { :class => 'form-horizontal' } do |f|
+= simple_form_for @product, :html => {:multipart => true},:html => { :class => 'form-horizontal' } do |f|
   = field_set_tag 'Product details' do
     = f.hidden_field :subcategory_id
     %dl 
@@ -27,7 +27,15 @@
       %dd= f.input :short_description, :level => false
       %dd= error_span(@product[:short_description])
   = field_set_tag 'Attachments' do
-    = f.input :image, as: :file, multiple: true
+    %dl
+      %dd
+        - if !@product.images.nil?
+          -for image in @product.images
+            = image_tag image.thumb.url 
+            = f.input :remove_images, :as => :boolean, :label => false, :inline_label => true
+             
+
+        = f.file_field :images, multiple: true
     = f.input :price
     = error_span(@product[:price])
     = f.input :cost_price
