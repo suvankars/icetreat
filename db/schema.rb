@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160130181718) do
+ActiveRecord::Schema.define(version: 20160220081019) do
 
   create_table "addresses", force: :cascade do |t|
     t.string   "name"
@@ -109,6 +109,7 @@ ActiveRecord::Schema.define(version: 20160130181718) do
     t.integer  "tax_rate_id"
     t.integer  "brand_id"
     t.integer  "size_id"
+    t.string   "image"
   end
 
   add_index "products", ["brand_id"], name: "index_products_on_brand_id"

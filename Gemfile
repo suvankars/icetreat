@@ -67,3 +67,4 @@ gem 'nifty-utils'
 gem 'nifty-dialog'
 
 gem 'carrierwave'
+#gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'

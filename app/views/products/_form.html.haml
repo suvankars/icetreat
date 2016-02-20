@@ -27,6 +27,7 @@
       %dd= f.input :short_description, :level => false
       %dd= error_span(@product[:short_description])
   = field_set_tag 'Attachments' do
+    = f.input :image, as: :file, multiple: true
     = f.input :price
     = error_span(@product[:price])
     = f.input :cost_price

@@ -17,6 +17,9 @@ class Product < ActiveRecord::Base
   belongs_to :size
   has_many :stock_level
 
+  #Mount image uploader 
+  mount_uploader :image, ImageUploader
+  
   def is_a_variant?
       self.parent_id.nil?
   end
