@@ -1,5 +1,5 @@
 class VariantsController < ApplicationController
-  before_action :set_variant, only: [:show, :edit, :update, :destroy]
+  before_action :set_variant, only: [:show, :edit, :update]
   
   def index
     @product = Product.find(params[:product_id])
@@ -42,8 +42,9 @@ class VariantsController < ApplicationController
   end
 
   def destroy
-      @variant.destroy
-      redirect_to [@product, :variants], :notice =>  t('variants.destroy_notice')
+      @product = Product.find(params[:product_id])
+      @product.variants.find(params[:id]).destroy
+      redirect_to products_path, :notice =>  t('variants.destroy_notice')
     end
 
   private

@@ -65,3 +65,5 @@ gem 'rabl'
 gem 'apipie-rails'
 gem 'nifty-utils'
 gem 'nifty-dialog'
+
+gem 'carrierwave'

@@ -1,0 +1,61 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require nifty/dialog
+ *= require_tree .
+ *= require_self
+ */
+
+  fieldset {
+    border:1px solid #dce2eb;
+    background:#fff;
+    padding-top:15px;
+    padding-bottom:25px;
+    margin-bottom:15px;
+    legend {
+      color:#5B6270; 
+      margin:0 25px; 
+      font-weight:300; 
+      font-size:1.5em;
+      border-bottom: 0px;
+      width: auto;
+    }
+    &.padded { padding:15px 25px 25px 25px;}
+    &.padded legend { margin:0;}
+    dl {
+      margin: 0 25px;
+      margin-bottom: 15px;
+
+    }
+    dd {
+        margin-bottom: 10px;
+        font-size: 1.2em;
+    }
+    
+    dl.third {
+      width: 31%;
+      margin: 0;
+      float: left;
+      &:nth-child(2) { margin-left:3%; width:31%;}
+      &:last-child { float:right; width:32%;}
+    } 
+    .splitContainer {
+      margin: 0 25px;
+      margin-bottom: 45px;
+      height: 50px; 
+    }
+  }
+  
+label {
+  font-weight: lighter;
+}
+
