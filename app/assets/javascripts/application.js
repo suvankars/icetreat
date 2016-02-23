@@ -17,5 +17,7 @@
 //= require nifty/dialog
 //= require react
 //= require react_ujs
+//=require jquery-fileupload/basic
+//= require jquery-fileupload/vendor/tmpl
 //= require components
 //= require_tree .

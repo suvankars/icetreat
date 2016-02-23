@@ -36,22 +36,29 @@
             = link_to "Delete", product_image_path(@product, index), :method => :delete, data: { confirm: "Are you sure you want to delete this image?" }
         = f.file_field :images, multiple: true
                
+  = field_set_tag 'Financial Properties' do
+    .splitContainer
+      %dl.third
+        %dd= f.input :price
+        %dd= error_span(@product[:price])
+      %dl.third
+        %dd= f.input :cost_price
+        %dd= error_span(@product[:cost_price])
+      %dl.third
+        %dd= f.input :tax_rate_id, :collection => @tax_rates, :selected => @default_tax_rate
 
-        //
-    = f.input :price
-    = error_span(@product[:price])
-    = f.input :cost_price
-    = error_span(@product[:cost_price])
-    = f.input :tax_rate_id, :collection => @tax_rates, :selected => @default_tax_rate
-
-    = f.input :size_id, :collection => @sizes, :selected => @default_size
-      
-    = f.input :quantity
-    = error_span(@product[:quantity])
+  = field_set_tag 'Quantitative Properties' do
+    .splitContainer
+      %dl.half
+        %dd= f.input :size_id, :collection => @sizes, :selected => @default_size
+      %dl.half
+        %dd= f.input :quantity
+        %dd= error_span(@product[:quantity])
      
     = f.fields_for :properties, OpenStruct.new(@product.properties) do |builder|
       - if !@product.subcategory.nil?
         - @product.subcategory.fields.each do |field|
           = render "products/fields/#{field.field_type}", field: field, f:builder 
+  %p.submit
     = f.button :submit, :class => 'btn-primary'
     = link_to t('.cancel', :default => t("helpers.links.cancel")), products_path, :class => 'btn btn-default'

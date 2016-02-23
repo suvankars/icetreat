@@ -3,3 +3,11 @@
   %h1=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => model_class.model_name.human.titleize
   = link_to t('Variants') , [@product, :variants], :class => 'button'
 = render :partial => "form"
+
+
+<script id="template-upload" type="text/x-tmpl">
+<div class="upload">
+{%=o.name%}
+<div class="progress"><div class="bar" style="width: 0%"></div></div>
+</div>
+</script>

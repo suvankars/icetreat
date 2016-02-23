@@ -64,8 +64,12 @@ class ProductsController < ApplicationController
   # PATCH/PUT /products/1.json
   def update
     respond_to do |format|
-      p product_params
-      if @product.update(product_params)
+      if @product.update(product_params.except(:images))
+        new_images = product_params[:images]
+        images = @product.images # copy the old images 
+        images += new_images if !new_images.nil? # concat old images with new ones
+        @product.images = images
+        @product.save
         format.html { redirect_to @product, notice: 'Product was successfully updated.' }
         format.json { render :show, status: :ok, location: @product }
       else
