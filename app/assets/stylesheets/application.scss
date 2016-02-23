@@ -11,10 +11,12 @@
  * file per style scope.
  *
  *= require nifty/dialog
+ *= require jquery.fileupload
+ *= require jquery.fileupload-ui
  *= require_tree .
  *= require_self
  */
-
+ 
   fieldset {
     border:1px solid #dce2eb;
     background:#fff;

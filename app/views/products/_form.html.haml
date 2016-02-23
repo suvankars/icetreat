@@ -30,12 +30,14 @@
     %dl
       %dd
         - if !@product.images.nil?
-          -for image in @product.images
+          - @product.images.each_with_index do |image, index|
             = image_tag image.thumb.url 
-            = f.input :remove_images, :as => :boolean, :label => false, :inline_label => true
-             
-
+            //= f.input :remove_images, :as => :boolean, :label => false, :inline_label => true
+            = link_to "Delete", product_image_path(@product, index), :method => :delete, data: { confirm: "Are you sure you want to delete this image?" }
         = f.file_field :images, multiple: true
+               
+
+        //
     = f.input :price
     = error_span(@product[:price])
     = f.input :cost_price

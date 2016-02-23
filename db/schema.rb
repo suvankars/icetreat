@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160220085909) do
+ActiveRecord::Schema.define(version: 20160223175511) do
 
   create_table "addresses", force: :cascade do |t|
     t.string   "name"
@@ -77,6 +77,12 @@ ActiveRecord::Schema.define(version: 20160220085909) do
 
   add_index "finances", ["supplier_id"], name: "index_finances_on_supplier_id"
 
+  create_table "images", force: :cascade do |t|
+    t.string "name"
+    t.string "image"
+    t.string "images"
+  end
+
   create_table "product_fields", force: :cascade do |t|
     t.string   "name"
     t.string   "field_type"
@@ -102,14 +108,16 @@ ActiveRecord::Schema.define(version: 20160220085909) do
     t.boolean  "stock_control",                             default: true
     t.integer  "subcategory_id"
     t.integer  "parent_id"
-    t.datetime "created_at",                                               null: false
-    t.datetime "updated_at",                                               null: false
+    t.datetime "created_at",                                                     null: false
+    t.datetime "updated_at",                                                     null: false
     t.string   "properties"
     t.integer  "supplier_id"
     t.integer  "tax_rate_id"
     t.integer  "brand_id"
     t.integer  "size_id"
-    t.string   "images"
+    t.string   "image",                                     default: "--- []\n"
+    t.string   "images",                                    default: "--- []\n"
+    t.string   "image_name"
   end
 
   add_index "products", ["brand_id"], name: "index_products_on_brand_id"

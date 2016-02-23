@@ -23,6 +23,17 @@
   %strong= model_class.human_attribute_name(:brand) + ':'
   %br
   = @product.brand.name
+%p
+  - @product.images.each_with_index do |image, index|
+    = image_tag(image.url)
+    = link_to "Delete", product_image_path(@product, index), :method => :delete, data: { confirm: "Are you sure you want to delete this image?" }
+      
+%h1 Add more images
+
+= form_for @product, url: product_images_path(@product), method: :post do |f| # use customized url endpoint 
+  .field
+    = f.file_field :images, multiple: true
+    = f.submit "Add More Images"
 
 = link_to t('.back', :default => t("helpers.links.back")), products_path, :class => 'btn btn-default'
 = link_to t('.edit', :default => t("helpers.links.edit")), edit_product_path(@product), :class => 'btn btn-default'

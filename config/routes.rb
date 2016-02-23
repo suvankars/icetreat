@@ -29,13 +29,14 @@ Rails.application.routes.draw do
 
   resources :products do
     resources :variants
+    resources :images, :only => [:create, :destroy]
   end
 
   resources :categories do
     resources :subcategories
   end
 
-  resources :images, :only => :destroy
+  #resources :images, :only => [:create, :destroy]
 
   # The priority is based upon order of creation: first created -> highest priority.
   #root 'welcome#index'

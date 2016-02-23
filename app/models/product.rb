@@ -19,7 +19,7 @@ class Product < ActiveRecord::Base
 
   #Mount image uploader 
   mount_uploaders :images, ImageUploader
-  
+  has_many :images, as: :parent, dependent: :destroy, autosave: true
   def is_a_variant?
       self.parent_id.nil?
   end
