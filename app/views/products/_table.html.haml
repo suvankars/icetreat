@@ -1,8 +1,4 @@
 - model_class = Product
-.page-header
-  %h1=t '.title', :default => model_class.model_name.human.pluralize.titleize
-  = form_tag new_product_path, method: :get 
-  = submit_tag "new", name: nil, :class => 'btn btn-primary'
 
 %table.table.table-bordered
   %thead
@@ -45,7 +41,7 @@
                   %td= number_to_currency product.price
                   %td
                     - if product.stock_control?
-                      %span.float-right= link_to t('products.edit'), stock_levels_path(:item_id => product.id), :class => 'edit', :rel => 'dialog', :data => {:dialog_width => 700, :dialog_behavior => 'stockLevelAdjustments'}
+                      %span.float-right= link_to t('products.editmmmmm'), stock_levels_path(:item_id => product.id), :class => 'edit', :rel => 'dialog', :data => {:dialog_width => 700, :dialog_behavior => 'stockLevelAdjustments'}
                       = boolean_tag(product.in_stock?, nil, :true_text => product.stock, :false_text => t('products.no_stock'))
                 - products.last.properties.values.each do |val|
                   %td= val
