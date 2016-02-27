@@ -7939,6 +7939,12 @@ button.close {
 .fa-bomb:before {
   content: "\f1e2";
 }
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url('/assets/glyphicons-halflings-regular.eot');
+  src: url('/assets/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('/assets/glyphicons-halflings-regular.woff') format('woff'), url('/assets/glyphicons-halflings-regular.ttf') format('truetype'), url('/assets/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+  color: white;
+}
 /* line 6, /home/suvankar/icetreat-back/icetreat/app/assets/stylesheets/products.scss */
 table.table.table-striped thead th {
   border: 1px solid #40454D;
@@ -8184,7 +8190,17 @@ h4 {
 
 
  */
-/* line 28, /home/suvankar/icetreat-back/icetreat/app/assets/stylesheets/application.scss */
+/* line 29, /home/suvankar/icetreat-back/icetreat/app/assets/stylesheets/application.scss */
+html {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 12px;
+  color: #000;
+  -webkit-font-smoothing: antialiased;
+  background-color: #f7f9fc;
+  overflow-y: scroll;
+}
+
+/* line 31, /home/suvankar/icetreat-back/icetreat/app/assets/stylesheets/application.scss */
 nav.sidebar {
   width: 200px;
   background: #40454D;
@@ -8192,48 +8208,49 @@ nav.sidebar {
   top: 0;
   bottom: 0;
 }
-/* line 34, /home/suvankar/icetreat-back/icetreat/app/assets/stylesheets/application.scss */
+/* line 37, /home/suvankar/icetreat-back/icetreat/app/assets/stylesheets/application.scss */
 nav.sidebar header.logo {
-  height: 100px;
-  background: url(/assets/bitten-ice-cream-f06377bbb6128d11182a97d03ee48010478697b0382806572340146b4e647c13.svg) #9AC835 no-repeat 22px 25px;
+  height: 93px;
+  background: url(/assets/bitten-ice-cream-f06377bbb6128d11182a97d03ee48010478697b0382806572340146b4e647c13.svg) #74BBFB no-repeat 22px 25px;
   background-size: 45px;
-  padding-left: 70px;
+  padding-left: 63px;
   padding-top: 2px;
 }
-/* line 41, /home/suvankar/icetreat-back/icetreat/app/assets/stylesheets/application.scss */
+/* line 44, /home/suvankar/icetreat-back/icetreat/app/assets/stylesheets/application.scss */
 nav.sidebar header.logo h1 a {
   text-decoration: none;
   background-color: rgba(133, 255, 0, 0);
   color: #FFFFFF;
 }
-/* line 47, /home/suvankar/icetreat-back/icetreat/app/assets/stylesheets/application.scss */
+/* line 50, /home/suvankar/icetreat-back/icetreat/app/assets/stylesheets/application.scss */
 nav.sidebar header.logo a:visited {
   color: #FFFFFF;
 }
-/* line 51, /home/suvankar/icetreat-back/icetreat/app/assets/stylesheets/application.scss */
+/* line 54, /home/suvankar/icetreat-back/icetreat/app/assets/stylesheets/application.scss */
 nav.sidebar header.logo p {
   color: #fff;
   font-size: 0.9em;
   margin-top: 4px;
 }
-/* line 55, /home/suvankar/icetreat-back/icetreat/app/assets/stylesheets/application.scss */
+/* line 58, /home/suvankar/icetreat-back/icetreat/app/assets/stylesheets/application.scss */
 nav.sidebar p.logged {
   background: #5B6270;
   padding: 12px 20px;
   color: #fff;
   font-size: 0.9em;
 }
-/* line 65, /home/suvankar/icetreat-back/icetreat/app/assets/stylesheets/application.scss */
+/* line 70, /home/suvankar/icetreat-back/icetreat/app/assets/stylesheets/application.scss */
 nav.sidebar ul li {
   padding: 0;
   border: 0;
   outline: 0;
+  float: left;
   font-size: 100%;
   letter-spacing: 0;
   vertical-align: baseline;
   background: transparent;
 }
-/* line 73, /home/suvankar/icetreat-back/icetreat/app/assets/stylesheets/application.scss */
+/* line 79, /home/suvankar/icetreat-back/icetreat/app/assets/stylesheets/application.scss */
 nav.sidebar ul li span.pending {
   float: right;
   font-size: 0.9em;
@@ -8245,7 +8262,14 @@ nav.sidebar ul li span.pending {
   margin-top: 9px;
   margin-right: 10px;
 }
-/* line 75, /home/suvankar/icetreat-back/icetreat/app/assets/stylesheets/application.scss */
+/* line 81, /home/suvankar/icetreat-back/icetreat/app/assets/stylesheets/application.scss */
+nav.sidebar ul li .glyphicon {
+  color: #ece5e5;
+  float: left;
+  font-size: 17px;
+  padding-top: 5px;
+}
+/* line 90, /home/suvankar/icetreat-back/icetreat/app/assets/stylesheets/application.scss */
 nav.sidebar ul li a {
   float: left;
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
@@ -8254,52 +8278,41 @@ nav.sidebar ul li a {
   padding: 10px 20px;
   font-size: 1.1em;
 }
-/* line 82, /home/suvankar/icetreat-back/icetreat/app/assets/stylesheets/application.scss */
+/* line 97, /home/suvankar/icetreat-back/icetreat/app/assets/stylesheets/application.scss */
 nav.sidebar ul li a:hover {
   background: rgba(0, 0, 0, 0.05);
 }
-/* line 85, /home/suvankar/icetreat-back/icetreat/app/assets/stylesheets/application.scss */
+/* line 100, /home/suvankar/icetreat-back/icetreat/app/assets/stylesheets/application.scss */
 nav.sidebar ul li a.active {
   font-weight: bold;
   color: #fff;
   background: rgba(0, 0, 0, 0.08);
 }
 
-/* line 95, /home/suvankar/icetreat-back/icetreat/app/assets/stylesheets/application.scss */
+/* line 110, /home/suvankar/icetreat-back/icetreat/app/assets/stylesheets/application.scss */
 .navbar {
   min-height: 50px;
   margin-bottom: 20px;
   margin-left: 200px;
 }
 
-/* line 101, /home/suvankar/icetreat-back/icetreat/app/assets/stylesheets/application.scss */
+/* line 116, /home/suvankar/icetreat-back/icetreat/app/assets/stylesheets/application.scss */
 .nav.side-pane {
   margin-left: -36px;
 }
 
-/* line 105, /home/suvankar/icetreat-back/icetreat/app/assets/stylesheets/application.scss */
+/* line 120, /home/suvankar/icetreat-back/icetreat/app/assets/stylesheets/application.scss */
 .white, .white a {
   color: #fff;
 }
 
-/* line 109, /home/suvankar/icetreat-back/icetreat/app/assets/stylesheets/application.scss */
-span.cat {
-  /* //// SPAN AS IMAGE \\ */
-  display: inline-block;
-  width: 32px;
-  height: 32px;
-  background: url(/assets/glyphicons-137-cogwheel-101027274f649ac44cc889a3d97f6566d7862ebd038011cdccb0651f869e4d6f.png) #9AC835 no-repeat;
-  /* \\ SPAN AS IMAGE //// */
-  vertical-align: middle;
-}
-
-/* line 122, /home/suvankar/icetreat-back/icetreat/app/assets/stylesheets/application.scss */
+/* line 126, /home/suvankar/icetreat-back/icetreat/app/assets/stylesheets/application.scss */
 .row {
   margin-left: 150px;
   margin-right: -44px;
 }
 
-/* line 126, /home/suvankar/icetreat-back/icetreat/app/assets/stylesheets/application.scss */
+/* line 130, /home/suvankar/icetreat-back/icetreat/app/assets/stylesheets/application.scss */
 fieldset {
   border: 1px solid rgba(145, 218, 15, 0.46);
   background: #fff;
@@ -8307,7 +8320,7 @@ fieldset {
   padding-bottom: 25px;
   margin-bottom: 15px;
 }
-/* line 132, /home/suvankar/icetreat-back/icetreat/app/assets/stylesheets/application.scss */
+/* line 136, /home/suvankar/icetreat-back/icetreat/app/assets/stylesheets/application.scss */
 fieldset legend {
   color: #5B6270;
   margin: 0 25px;
@@ -8316,58 +8329,58 @@ fieldset legend {
   border-bottom: 0px;
   width: auto;
 }
-/* line 140, /home/suvankar/icetreat-back/icetreat/app/assets/stylesheets/application.scss */
+/* line 144, /home/suvankar/icetreat-back/icetreat/app/assets/stylesheets/application.scss */
 fieldset.padded {
   padding: 15px 25px 25px 25px;
 }
-/* line 141, /home/suvankar/icetreat-back/icetreat/app/assets/stylesheets/application.scss */
+/* line 145, /home/suvankar/icetreat-back/icetreat/app/assets/stylesheets/application.scss */
 fieldset.padded legend {
   margin: 0;
 }
-/* line 142, /home/suvankar/icetreat-back/icetreat/app/assets/stylesheets/application.scss */
+/* line 146, /home/suvankar/icetreat-back/icetreat/app/assets/stylesheets/application.scss */
 fieldset dl {
   margin: 0 25px;
   margin-bottom: 15px;
 }
-/* line 147, /home/suvankar/icetreat-back/icetreat/app/assets/stylesheets/application.scss */
+/* line 151, /home/suvankar/icetreat-back/icetreat/app/assets/stylesheets/application.scss */
 fieldset dd {
   margin-bottom: 10px;
   font-size: 1.2em;
 }
-/* line 152, /home/suvankar/icetreat-back/icetreat/app/assets/stylesheets/application.scss */
+/* line 156, /home/suvankar/icetreat-back/icetreat/app/assets/stylesheets/application.scss */
 fieldset dl.third {
   width: 31%;
   margin: 0;
   float: left;
 }
-/* line 156, /home/suvankar/icetreat-back/icetreat/app/assets/stylesheets/application.scss */
+/* line 160, /home/suvankar/icetreat-back/icetreat/app/assets/stylesheets/application.scss */
 fieldset dl.third:nth-child(2) {
   margin-left: 3%;
   width: 31%;
 }
-/* line 157, /home/suvankar/icetreat-back/icetreat/app/assets/stylesheets/application.scss */
+/* line 161, /home/suvankar/icetreat-back/icetreat/app/assets/stylesheets/application.scss */
 fieldset dl.third:last-child {
   float: right;
   width: 32%;
 }
-/* line 160, /home/suvankar/icetreat-back/icetreat/app/assets/stylesheets/application.scss */
+/* line 164, /home/suvankar/icetreat-back/icetreat/app/assets/stylesheets/application.scss */
 fieldset dl.half {
   width: 49%;
   margin: 0;
   float: left;
 }
-/* line 164, /home/suvankar/icetreat-back/icetreat/app/assets/stylesheets/application.scss */
+/* line 168, /home/suvankar/icetreat-back/icetreat/app/assets/stylesheets/application.scss */
 fieldset dl.half:nth-child(2) {
   float: right;
 }
-/* line 167, /home/suvankar/icetreat-back/icetreat/app/assets/stylesheets/application.scss */
+/* line 171, /home/suvankar/icetreat-back/icetreat/app/assets/stylesheets/application.scss */
 fieldset .splitContainer {
   margin: 0 25px;
   margin-bottom: 45px;
   height: 50px;
 }
 
-/* line 173, /home/suvankar/icetreat-back/icetreat/app/assets/stylesheets/application.scss */
+/* line 177, /home/suvankar/icetreat-back/icetreat/app/assets/stylesheets/application.scss */
 p.submit {
   margin: 0;
   background: #fff;
@@ -8375,12 +8388,12 @@ p.submit {
   padding: 25px;
 }
 
-/* line 175, /home/suvankar/icetreat-back/icetreat/app/assets/stylesheets/application.scss */
+/* line 179, /home/suvankar/icetreat-back/icetreat/app/assets/stylesheets/application.scss */
 label {
   font-weight: lighter;
 }
 
-/* line 179, /home/suvankar/icetreat-back/icetreat/app/assets/stylesheets/application.scss */
+/* line 183, /home/suvankar/icetreat-back/icetreat/app/assets/stylesheets/application.scss */
 form {
   overflow: hidden;
   background: #F7F9FC;
@@ -8390,21 +8403,22 @@ form {
   padding-right: 40px;
 }
 
-/* line 188, /home/suvankar/icetreat-back/icetreat/app/assets/stylesheets/application.scss */
+/* line 192, /home/suvankar/icetreat-back/icetreat/app/assets/stylesheets/application.scss */
 .page-header {
-  height: 85px;
+  height: 94px;
   background: #fff;
   box-shadow: 0 0px 15px -2px rgba(0, 0, 0, 0.2);
-  margin-top: -39px;
-  margin-bottom: 8px;
+  margin-top: -20px;
+  margin-bottom: 15px;
+  margin-left: -8px;
 }
-/* line 195, /home/suvankar/icetreat-back/icetreat/app/assets/stylesheets/application.scss */
+/* line 200, /home/suvankar/icetreat-back/icetreat/app/assets/stylesheets/application.scss */
 .page-header p.buttons {
   float: right;
   margin-top: 27px;
   margin-right: 35px;
 }
-/* line 201, /home/suvankar/icetreat-back/icetreat/app/assets/stylesheets/application.scss */
+/* line 206, /home/suvankar/icetreat-back/icetreat/app/assets/stylesheets/application.scss */
 .page-header h2 {
   font-size: 2.0em;
   font-weight: 300;
@@ -8415,13 +8429,13 @@ form {
   padding-top: 27px;
 }
 
-/* line 212, /home/suvankar/icetreat-back/icetreat/app/assets/stylesheets/application.scss */
+/* line 217, /home/suvankar/icetreat-back/icetreat/app/assets/stylesheets/application.scss */
 td.actions {
   text-align: right;
   margin-right: 30px;
 }
 
-/* line 218, /home/suvankar/icetreat-back/icetreat/app/assets/stylesheets/application.scss */
+/* line 223, /home/suvankar/icetreat-back/icetreat/app/assets/stylesheets/application.scss */
 table tbody tr td a.edit img {
   background: none;
   margin-top: 3px;
@@ -8432,16 +8446,16 @@ table tbody tr td a.edit img {
   text-indent: -40000px;
   margin-right: 5px;
 }
-/* line 228, /home/suvankar/icetreat-back/icetreat/app/assets/stylesheets/application.scss */
+/* line 233, /home/suvankar/icetreat-back/icetreat/app/assets/stylesheets/application.scss */
 table tbody tr td a.edit img hover {
   border: 1px solid red;
 }
-/* line 230, /home/suvankar/icetreat-back/icetreat/app/assets/stylesheets/application.scss */
+/* line 235, /home/suvankar/icetreat-back/icetreat/app/assets/stylesheets/application.scss */
 table tbody tr td a.edit img hover {
   border: 0;
   outline: 0;
 }
-/* line 235, /home/suvankar/icetreat-back/icetreat/app/assets/stylesheets/application.scss */
+/* line 240, /home/suvankar/icetreat-back/icetreat/app/assets/stylesheets/application.scss */
 table tbody tr td a.delete img {
   background-repeat: no-repeat;
   margin-top: 3px;
@@ -8451,17 +8465,17 @@ table tbody tr td a.delete img {
   text-indent: -40000px;
 }
 
-/* line 246, /home/suvankar/icetreat-back/icetreat/app/assets/stylesheets/application.scss */
+/* line 251, /home/suvankar/icetreat-back/icetreat/app/assets/stylesheets/application.scss */
 a:hover img {
   display: block;
 }
 
-/* line 247, /home/suvankar/icetreat-back/icetreat/app/assets/stylesheets/application.scss */
+/* line 252, /home/suvankar/icetreat-back/icetreat/app/assets/stylesheets/application.scss */
 .black-background {
   background-color: #000000;
 }
 
-/* line 248, /home/suvankar/icetreat-back/icetreat/app/assets/stylesheets/application.scss */
+/* line 253, /home/suvankar/icetreat-back/icetreat/app/assets/stylesheets/application.scss */
 .white {
   color: #ffffff;
 }
