@@ -41,7 +41,7 @@
                   %td= number_to_currency product.price
                   %td
                     - if product.stock_control?
-                      %span.float-right= link_to t('products.editmmmmm'), stock_levels_path(:item_id => product.id), :class => 'edit', :rel => 'dialog', :data => {:dialog_width => 700, :dialog_behavior => 'stockLevelAdjustments'}
+                      %span.float-right= link_to t('products.edit'), stock_levels_path(:product_id => product.id), :class => 'edit', :rel => 'dialog', :data => {:dialog_width => 700, :dialog_behavior => 'stockLevelAdjustments'}
                       = boolean_tag(product.in_stock?, nil, :true_text => product.stock, :false_text => t('products.no_stock'))
                 - products.last.properties.values.each do |val|
                   %td= val
