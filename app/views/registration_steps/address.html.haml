@@ -1,5 +1,6 @@
 .content
- %h4= 'Address details'
+ .page-header
+  %h2= 'Address details'
  - if !@addresses.empty?
   - @addresses.each do |address|
    = render "suppliers/address_form", address: address
