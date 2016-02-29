@@ -1,10 +1,12 @@
 class ProductsController < ApplicationController
+  before_filter :authenticate_user!
+  load_and_authorize_resource
   before_action :set_product, only: [:show, :edit, :update, :destroy]
 
   # GET /products
   # GET /products.json
   def index
-    @products = Product.all
+    @products = current_user.products.all
     @cat = Category.all
     @categories = Category.all
   end
@@ -48,6 +50,8 @@ class ProductsController < ApplicationController
   # POST /products.json
   def create
     @product = Product.new(product_params)
+    
+    @product.user = current_user
 
     respond_to do |format|
       if @product.save

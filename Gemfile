@@ -74,3 +74,5 @@ gem 'nifty-dialog'
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 gem "mini_magick"
 gem "fog-aws"
+gem 'devise'
+gem 'cancancan', '~> 1.10' 

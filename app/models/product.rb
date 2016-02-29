@@ -17,6 +17,8 @@ class Product < ActiveRecord::Base
   belongs_to :size
   has_many :stock_level
 
+  belongs_to :user
+  
   #Mount image uploader 
   mount_uploaders :images, ImageUploader
   has_many :images, as: :parent, dependent: :destroy, autosave: true

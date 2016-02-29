@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   
 
+
+  devise_for :users
   apipie
   namespace :api do
       namespace :v1 do

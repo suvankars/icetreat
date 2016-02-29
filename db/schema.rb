@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160223175511) do
+ActiveRecord::Schema.define(version: 20160229212922) do
 
   create_table "addresses", force: :cascade do |t|
     t.string   "name"
@@ -77,12 +77,6 @@ ActiveRecord::Schema.define(version: 20160223175511) do
 
   add_index "finances", ["supplier_id"], name: "index_finances_on_supplier_id"
 
-  create_table "images", force: :cascade do |t|
-    t.string "name"
-    t.string "image"
-    t.string "images"
-  end
-
   create_table "product_fields", force: :cascade do |t|
     t.string   "name"
     t.string   "field_type"
@@ -115,9 +109,9 @@ ActiveRecord::Schema.define(version: 20160223175511) do
     t.integer  "tax_rate_id"
     t.integer  "brand_id"
     t.integer  "size_id"
-    t.string   "image",                                     default: "--- []\n"
     t.string   "images",                                    default: "--- []\n"
     t.string   "image_name"
+    t.integer  "user_id"
   end
 
   add_index "products", ["brand_id"], name: "index_products_on_brand_id"
@@ -126,6 +120,7 @@ ActiveRecord::Schema.define(version: 20160223175511) do
   add_index "products", ["subcategory_id"], name: "index_products_on_subcategory_id"
   add_index "products", ["supplier_id"], name: "index_products_on_supplier_id"
   add_index "products", ["tax_rate_id"], name: "index_products_on_tax_rate_id"
+  add_index "products", ["user_id"], name: "index_products_on_user_id"
 
   create_table "sizes", force: :cascade do |t|
     t.string   "name"
@@ -173,5 +168,24 @@ ActiveRecord::Schema.define(version: 20160223175511) do
     t.datetime "created_at",                                        null: false
     t.datetime "updated_at",                                        null: false
   end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "email",                  default: "",    null: false
+    t.string   "encrypted_password",     default: "",    null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,     null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
+    t.boolean  "admin",                  default: false
+  end
+
+  add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
 end
