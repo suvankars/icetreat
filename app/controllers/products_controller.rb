@@ -15,7 +15,12 @@ end
   # GET /products
   # GET /products.json
   def index
-    @products = current_user.products.all
+    if current_user.admin?
+      @products = Product.all
+    else
+      @products = current_user.products.all
+    end
+    
     @cat = Category.all
     @categories = Category.all
   end

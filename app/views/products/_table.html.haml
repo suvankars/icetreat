@@ -22,7 +22,13 @@
           -if subcategory.has_products?
             %th{:colspan => 5}= link_to t(subcategory.name, :default => subcategory.name), category_subcategory_path(subcategory.category, subcategory), :class => 'btn btn-info btn-xs'
             - subcategory.products.each do |product|
-              - if product.user == current_user
+              - product_in_scope = nil
+              - if current_user.admin?
+                - product_in_scope = product
+              -elsif product.user == current_user
+                - product_in_scope = product
+              - product = product_in_scope
+              - if product
                 %tr
                   %td= link_to product.skuid, product_path(product)
                   %td= product.name
