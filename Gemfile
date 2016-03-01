@@ -58,6 +58,7 @@ end
 gem 'react-rails'
 gem 'haml-rails'
 gem "twitter-bootstrap-rails"
+gem 'bootstrap-sass'
 gem "less-rails" 
 gem 'country_select'
 gem 'rails_12factor', group: :production
