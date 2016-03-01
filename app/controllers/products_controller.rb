@@ -3,6 +3,15 @@ class ProductsController < ApplicationController
   load_and_authorize_resource
   before_action :set_product, only: [:show, :edit, :update, :destroy]
 
+
+
+def cors_set_access_control_headers
+    headers['Access-Control-Allow-Origin'] = '*'
+    headers['Access-Control-Allow-Methods'] = 'POST, GET, PUT, DELETE, OPTIONS'
+    headers['Access-Control-Allow-Headers'] = 'Origin, Content-Type, Accept, Authorization, Token'
+    headers['Access-Control-Max-Age'] = "1728000"
+end
+
   # GET /products
   # GET /products.json
   def index
