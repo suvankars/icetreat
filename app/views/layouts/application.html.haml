@@ -75,11 +75,13 @@
     .container
       %header.main
         = yield :header
-
-      #content    
-        = bootstrap_flash
-        %section.main
-          = yield
+    .container-fluid
+      .row
+        .col-xs-12
+          #content    
+            = bootstrap_flash
+            %section.main
+              = yield
         
 
 
