@@ -19,34 +19,18 @@
 
 
   %body
-    / .navbar.navbar-default.navbar-static-top
-    /   .container
-    /     %button.navbar-toggle(type="button" data-toggle="collapse" data-target=".navbar-responsive-collapse")
-    /       %span.icon-bar
-    /       %span.icon-bar
-    /       %span.icon-bar
-    /     %a.navbar-brand(href="#") IceTreat
-    /     .navbar-collapse.collapse.navbar-responsive-collapse
-    /       %ul.nav.navbar-nav
-    /         %li= link_to "Categories", "/categories"
-    /         %li= link_to "Products", "/products"
-    /         %li= link_to "Suppliers", "/suppliers"
-    /         %li= link_to "Brands", "/brands"
-    /         %li= link_to "Tax Rates", "/tax_rates"
-    /         %li= link_to "Sizes", "/sizes"
-    /         %li= link_to "Dashboard", "/dashboard"
-    /         %li= link_to "Api Docs", "/apipie"
-            
-    /         %li= link_to "About us", "#"
-
-
     %nav.sidebar
       %button.navbar-toggle(type="button" data-toggle="collapse" data-target=".navbar-responsive-collapse")
       %header.logo
         %h1= link_to "Icetreat", root_path, :class => "nohover"
         %p beta
-       
+        -if user_signed_in?
+          %p
+            %logged
+              %span.glyphicon.glyphicon-user
+              = current_user.email
         %ul.nav.side-pane
+          
           %li
             %span.glyphicon.glyphicon-dashboard
             = link_to "Dashboard", "/dashboard"
@@ -75,31 +59,28 @@
           %li
             %span.glyphicon.glyphicon-hand-right
             = link_to "About us", "#"
+          -if user_signed_in?
+            %li
+              %span.glyphicon.glyphicon-log-out
+              = link_to "Sign out", destroy_user_session_path, :method => :delete
+          -else
+            %li
+              %span.glyphicon.glyphicon-log-in
+              = link_to "Sign in", new_user_session_path 
+            %li
+              %span.glyphicon.glyphicon-new-window
+              = link_to "Sign up", new_user_registration_path  
 
-    
     .container
       .row
         .col-lg-9
-          %login
-            - if user_signed_in?
-              = current_user.email
-              = link_to "Sign out", destroy_user_session_path, :method => :delete
-            -else
-              = link_to "Sign in", new_user_session_path 
-              = link_to "Sign up", new_user_registration_path
-            
+          %header.main
+            = yield :header
 
-          = bootstrap_flash
-          = yield
-        .col-lg-3
-          / .well.sidebar-nav
-          /   %h3 Search category
-          /   %ul.nav.nav-list
-          /     %li= link_to "Link 1", "/#"
-          /     = form_tag categories_path, :class => "navbar-search pull-left", :method => :get do
-          /       = text_field_tag :name, nil, :class => "search-query span3", :placeholder => "Search category"
-          /       = button_to 'Find'
-      /%footer
-      /  %p &copy; Mammoth Company 2015
+          #content    
+            = bootstrap_flash
+            %section.main
+              = yield
+        
 
 

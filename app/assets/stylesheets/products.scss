@@ -2,14 +2,16 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
 table.table.table-striped {
   thead th { border:1px solid #40454D; background:#40454D; text-align:left; font-weight:normal; font-size:0.9em; color:#fff; }
 }
 
 table.table.table-bordered {
+  background-color: #fff;
   thead th { border:1px solid #40454D; background:#40454D; text-align:left; font-weight:normal; font-size:0.9em; color:#fff; }
 
-  tbody th { text-align:left; background:#5B6270; border:1px solid #5B6270;font-size:1.2em; color:#fff;}
+  tbody th { text-align:left; background:#5B6270; border:1px solid #5B6270;font-size:1.2em; color:#40454D;}
   tbody td.multistage {
     padding-left: 0px;
     padding-right: 0px;
@@ -27,7 +29,7 @@ table.table.table-bordered {
   }
 
   tbody tr.form td {
-    background: #f2f6fb;
+    background: #red;
   }
 
 }

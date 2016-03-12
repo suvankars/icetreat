@@ -4,13 +4,13 @@
   %thead
     %tr
       %th{:width => '10%'}= model_class.human_attribute_name(:sku)
-      %th{:width => '35%'}= model_class.human_attribute_name(:name)
+      %th{:width => '30%'}= model_class.human_attribute_name(:name)
       %th{:width => '25%'}= t('products.price_variants')
       %th{:width => '15%'}= t('products.stock')
       - if !products.empty?
         - products.last.properties.keys.each do |prop|
           %th= model_class.human_attribute_name(prop)
-      %th{:width => '15%'}=t '.actions', :default => t("helpers.actions")
+      %th{:width => '20%'}=t '.actions', :default => t("helpers.actions")
   %tbody
     - if products.empty?
       %tr.empty
