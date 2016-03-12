@@ -73,14 +73,13 @@
               = link_to "Sign up", new_user_registration_path  
 
     .container
-      .row
-        %header.main
-          = yield :header
+      %header.main
+        = yield :header
 
-        #content    
-          = bootstrap_flash
-          %section.main
-            = yield
+      #content    
+        = bootstrap_flash
+        %section.main
+          = yield
         
 
 
