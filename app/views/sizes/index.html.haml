@@ -1,5 +1,5 @@
 - model_class = Size
-.page-header
+= content_for :header do
   %p.buttons= link_to t('.new', :default => t("helpers.links.new")), new_size_path, :class => 'btn btn-primary'
   %h2=t '.title', :default => model_class.model_name.human.pluralize.titleize
 %table.table.table-striped

@@ -165,7 +165,7 @@ nav.sidebar {
   margin-right: -15px;
   padding-left: 156px;
 }
-  fieldset {
+  #content fieldset {
     border:1px solid rgba(145, 218, 15, 0.46);
     background:#fff;
     padding-top:15px;
@@ -224,6 +224,7 @@ form {
       padding:15px;
       padding-left: 40px;
       padding-right: 40px;
+      background-color: white;
 }
 
 header.main {

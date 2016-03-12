@@ -1,6 +1,7 @@
 - model_class = Category
-.page-header
-  %h1=t '.title', :default => model_class.model_name.human.titleize
+= content_for :header do
+  %p.buttons= link_to t('back_to_category_list') , :categories, :class => 'btn btn-primary'
+  %h2=t '.title', :default => model_class.model_name.human.titleize
 
 %p
   %strong= model_class.human_attribute_name(:name) + ':'
