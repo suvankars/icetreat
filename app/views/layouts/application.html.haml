@@ -25,10 +25,11 @@
         %h1= link_to "Icetreat", root_path, :class => "nohover"
         %p beta
         -if user_signed_in?
-          %p
+          %li
             %logged
               %span.glyphicon.glyphicon-user
               = current_user.email
+        %p
         %ul.nav.side-pane
           
           %li
@@ -73,14 +74,13 @@
 
     .container
       .row
-        .col-lg-9
-          %header.main
-            = yield :header
+        %header.main
+          = yield :header
 
-          #content    
-            = bootstrap_flash
-            %section.main
-              = yield
+        #content    
+          = bootstrap_flash
+          %section.main
+            = yield
         
 
 

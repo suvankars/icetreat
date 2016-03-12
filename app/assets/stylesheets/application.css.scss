@@ -47,6 +47,9 @@ nav.sidebar {
   position:fixed;
   top:0;
   bottom:0;
+
+  p.user { background: #5B6270;}
+  
   header.logo {
     height: 93px;
     background:image-url('bitten-ice-cream.svg') #74BBFB no-repeat 22px 25px;
@@ -67,14 +70,16 @@ nav.sidebar {
     p { color:#fff; font-size:0.75em;  }
 
     logged {
-      background: #5B6270;
+     background: #5B6270;
       padding: 12px 10px;
       color: #fff;
       font-size: 0.9em;
-      margin-left: -62px;
+      margin-left: -75px;
       margin-top: -17px;
-      padding-top: 10px;
-      padding-right: 82px;
+      padding-top: 8px;
+      padding-right: 56px;
+      padding-bottom: 9px;
+      margin-bottom: 10px;
       }
   }
 
